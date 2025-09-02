@@ -1,0 +1,8 @@
+/* Do not forget to create a CSS root file. */
+
+/* CSS RESET*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
