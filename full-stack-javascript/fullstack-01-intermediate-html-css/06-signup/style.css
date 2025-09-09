@@ -6,13 +6,15 @@
 
 /* Colors */
 :root {
-  --create-account-color: #596d48;
+  --create-account-color: #2e6f40;
   --default-light-border: #e5e7eb;
   --invalid-password-border: #ad1515;
   --hover-color: wheat;
   --input-color: green;
   --background-right: #f7f3f2;
   --input-outline: #4300fc;
+  --placeholder-color: #d9cccc;
+  --border-gray: #36404a;
 }
 
 /* 
@@ -191,16 +193,22 @@ section.signup_right-panel > section.signup_form-area > h3 {
   font-size: 1.5rem;
   font-weight: 600;
 }
+
+/* Each div directly inside the form = a row of input groups.
+They’re laid out side by side with display: flex and gap: 3rem. */
 form > div {
   margin-bottom: 1rem;
   display: flex;
   gap: 3rem;
 }
+
+/* Each inner div (like .first-name-container) stacks its label and input vertically. */
 form > div > div {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
 }
+/* Labels are styled to be small and spaced out for clarity. */
 form > div > div > label {
   font-size: 0.75rem;
   letter-spacing: 1px;
@@ -208,16 +216,16 @@ form > div > div > label {
 input {
   padding: 0.25rem 0.5rem;
   font-size: 0.95rem;
-  border: 1px solid var(--input-outline);
+  border: 2px solid var(--background-right);
   border-radius: 6px;
 }
 input::placeholder {
-  color: var(--background-right);
+  color: var(--placeholder-color);
 }
 input:invalid {
-  outline: 1px red;
+  outline: 1px solid red;
 }
-input: :focus {
+input:focus {
   outline: 1px solid blue;
 }
 section.signup_right-panel > section.signup_form-cta {
@@ -228,7 +236,7 @@ section.signup_right-panel > section.signup_form-cta {
 input[type="submit"] {
   padding: 0.75rem 2rem;
   align-self: flex-start;
-  background: var(--input-color);
+  background: var(--create-account-color);
   color: white;
   border-radius: 10px;
   font-weight: 600;
@@ -236,7 +244,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 input[type="submit"]:hover {
-  background: var(--input-color);
+  background: var(--create-account-color);
 }
 input[type="submit"] + p {
   font-size: 0.875rem;
