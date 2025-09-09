@@ -11,6 +11,7 @@
   --create-account-color: #596d48;
   --default-light-border: #e5e7eb;
   --invalid-password-border: #ad1515;
+  --hover-color: wheat;
 }
 
 /* 
@@ -136,3 +137,18 @@ main {
   color: white;
   font-size: 15px;
 }
+
+/* Target direct <a> links inside .signup_credits.
+   Set the text color to white and enable a smooth color transition. */
+.signup_credits > a {
+  color: white;
+  transition: color 0.2s;
+}
+
+/* On hover, change the link color to the value of --hover-color.
+   The transition defined above makes this change animate smoothly. */
+.signup_credits > a:hover {
+  color: var(--hover-color);
+}
+
+/* RIGHT PANEL */
