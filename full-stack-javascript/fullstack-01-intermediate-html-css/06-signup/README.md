@@ -1,8 +1,8 @@
-Sign Up Form
+## Sign Up Form
 
 A responsive sign-up form built as part of The Odin Project curriculum. This project focuses on semantic HTML, modern CSS practices, and form validation styling.
 
-✨ Features
+## ✨ Features
 
 CSS Reset – Implemented Josh Comeau’s CSS reset to remove inconsistent default browser styles.
 
@@ -16,7 +16,7 @@ BEM Naming Convention – Consistent and maintainable class names (signup_left-p
 
 Form Styling – Labels, inputs, and error states styled for clarity and accessibility.
 
-🛠️ Challenges & Breakthroughs
+## 🛠️ Challenges & Breakthroughs
 
 1. Form Structure Issue  
    Initially, the form layout was broken even though CSS selectors were correct.  
@@ -29,14 +29,15 @@ Form Styling – Labels, inputs, and error states styled for clarity and accessi
    Adjusted :focus states to avoid overlapping blue outlines and red error borders.  
    Implemented pattern attributes and custom validation messages for stronger form control.
 
-📂 Project Structure  
-.  
-├── index.html # Main HTML file  
-├── style.css # Stylesheet with reset + custom styles  
-├── fonts/ # Norse-Bold font  
-└── images/ # Background & Odin logo
+## 📂 Project Structure
 
-📖 Learnings
+.  
+ ├── index.html # Main HTML file  
+ ├── style.css # Stylesheet with reset + custom styles  
+ ├── fonts/ # Norse-Bold font  
+ └── images/ # Background & Odin logo
+
+## 📖 Learnings
 
 Importance of semantic markup for maintainable layouts.  
 How BEM makes complex UIs easier to scale.  
