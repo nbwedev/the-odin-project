@@ -5,3 +5,40 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --main-background-color: #ababab;
+  --header-background-color: #e7e8e9;
+  --sidebar-background-color: #161717;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  /* This creates two columns(vertical) - 1 thats 300px wide, the other column takes up the remaining space. */
+  /* It is easier to use fraction than hard-coding a value because it is inaccurate. */
+  grid-template-columns: 300px 1fr;
+  /* Same with above but with rows(horizontal.) */
+  grid-template-rows: 100px 1fr;
+}
+
+.main {
+  background-color: var(--main-background-color);
+
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.header {
+  background-color: var(--header-background-color);
+
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.sidebar {
+  background-color: var(--sidebar-background-color);
+
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
