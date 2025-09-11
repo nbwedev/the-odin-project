@@ -30,12 +30,31 @@ body {
 .main {
   background-color: var(--main-background-color);
 
+  /* Add padding around the main container */
+  padding: 25px;
   /* Line-based grid positioning */
   /* grid-row: 2 / 3;
   grid-column: 2 / 3; */
 
   /* Grid-template-area based positioning */
   grid-area: main;
+
+  /* Add the grid properties to target the 6 divs inside. */
+  /* The main element can be a grid container as well with relation to the divs inside it. */
+  display: grid;
+
+  /* Define a 3x3 grid inside main */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  /* Layout of the 6 cards using named grid areas */
+  grid-template-areas:
+    "c1 c2 c3"
+    "c4 c4 c5"
+    "c4 c4 c6";
+
+  /* Spacing between grid items */
+  gap: 20px;
 }
 
 .header {
@@ -58,4 +77,30 @@ body {
 
   /* Grid-template-area based positioning */
   grid-area: side;
+}
+
+/* This will apply to all six card class under main element. */
+.card {
+  background-color: var(--header-background-color);
+  border-radius: 10px;
+}
+
+/* Position each card in the grid using nth-child selectors */
+.card:nth-child(1) {
+  grid-area: c1;
+}
+.card:nth-child(2) {
+  grid-area: c2;
+}
+.card:nth-child(3) {
+  grid-area: c3;
+}
+.card:nth-child(4) {
+  grid-area: c4;
+}
+.card:nth-child(5) {
+  grid-area: c5;
+}
+.card:nth-child(6) {
+  grid-area: c6;
 }
