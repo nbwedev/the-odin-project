@@ -10,6 +10,7 @@
   --main-background-color: #e2e8f0;
   --header-background-color: #ffffff;
   --sidebar-background-color: #1992d3;
+  --card-border-color: #f0b329;
 }
 
 body {
@@ -38,7 +39,7 @@ body {
   background-color: var(--main-background-color);
 
   /* Add padding around the main container */
-  padding: 25px;
+  padding: 100px 25px 50px 25px;
 
   /* Grid-template-area based positioning */
   grid-area: main;
@@ -79,6 +80,20 @@ body {
 .card {
   background-color: var(--header-background-color);
   border-radius: 10px;
+}
+
+/* Applies side border for these cards. */
+.card:nth-child(1),
+.card:nth-child(2),
+.card:nth-child(5),
+.card:nth-child(6),
+.card:nth-child(7),
+.card:nth-child(8) {
+  border-bottom-style: solid;
+  border-left-width: 10px;
+  border-left-style: solid;
+  border-bottom-width: 0px;
+  border-color: var(--card-border-color);
 }
 
 .card:nth-child(1) {
