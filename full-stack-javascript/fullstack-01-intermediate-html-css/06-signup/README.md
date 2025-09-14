@@ -1,6 +1,6 @@
 ## Sign Up Form
 
-A responsive sign-up form built as part of The Odin Project curriculum. This project focuses on semantic HTML, modern CSS practices, and form validation styling.
+A simple sign-up form built as part of The Odin Project curriculum. This project focuses on semantic HTML, modern CSS practices, and form validation styling.
 
 ---
 
