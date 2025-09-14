@@ -2,6 +2,14 @@
 
 A responsive sign-up form built as part of The Odin Project curriculum. This project focuses on semantic HTML, modern CSS practices, and form validation styling.
 
+---
+
+
+## Live Site     
+
+The live site can be viewed [here](https://sign-up-from-nbwedev.vercel.app/).           
+
+ 
 ## ✨ Features
 
 CSS Reset – Implemented Josh Comeau’s CSS reset to remove inconsistent default browser styles.
