@@ -82,3 +82,17 @@ h6 {
   --gray-background-color: #e2e8f0;
   --white-background-color: #ffffff;
 }
+
+/* BODY */
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) 6fr;
+  grid-template-areas:
+    "aside header"
+    "aside main"
+    "aside main"
+    "aside footer";
+  background-color: var(--gray-background-color);
+}
