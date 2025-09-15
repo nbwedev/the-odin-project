@@ -94,17 +94,63 @@ body {
     "aside main"
     "aside main"
     "aside footer";
-  background-color: var(--gray-background-color);
-}
-
-/* Grid-based positioning layout */
-header {
-  display: grid;
-  grid-area: header;
   background-color: var(--white-background-color);
 }
 
+/* MISC . TODO: revise */
+
+p {
+  font-size: 0.875rem;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+}
+
+svg,
+button {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+/* end if MISC */
+
+/* Grid-based positioning layout */
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  border-bottom: 1px solid lightgray;
+}
+
 /* Header styles */
+header > div {
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
 header .header_top {
   height: 100%;
   display: grid;
@@ -112,20 +158,15 @@ header .header_top {
   align-items: center;
 }
 
-header > div {
-  padding: 0.1rem;
-  gap: 4rem;
-}
-
-header .header_top .header_search-bar {
+.header_top .header_search-bar {
   display: grid;
   grid-template-columns: 24px 1fr;
   gap: 1rem;
   align-items: center;
 }
 
-header .header_top .header_search-bar input {
-  padding: 0.07rem;
+.header_top .header_search-bar input {
+  padding: 0 0.75rem;
   height: 30px;
   width: 75%;
   border: none;
@@ -134,17 +175,28 @@ header .header_top .header_search-bar input {
   background: var(--gray-background-color);
 }
 
-header .header_top .header_profile {
+.header_top .header_search-bar input::placeholder {
+  color: gray;
+}
+
+.header_top .header_profile {
   display: grid;
-  grid-template-columns: repeat(2, 1fr) 3fr;
+  grid-template-columns: repeat(2, 1fr) auto;
   justify-self: end;
   justify-items: end;
   align-items: center;
   gap: 1rem;
 }
 
-header .header_top .header_profile h3 {
+.header_top .header_profile h3 {
   font-size: 1rem;
+}
+
+.header_bottom {
+  padding: 0 1rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 }
 
 /* End of header */
