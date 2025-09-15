@@ -96,3 +96,81 @@ body {
     "aside footer";
   background-color: var(--gray-background-color);
 }
+
+/* Grid-based positioning layout */
+header {
+  display: grid;
+  grid-area: header;
+  background-color: var(--white-background-color);
+}
+
+/* Header styles */
+header .header_top {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+}
+
+header > div {
+  padding: 0.1rem;
+  gap: 4rem;
+}
+
+header .header_top .header_search-bar {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+header .header_top .header_search-bar input {
+  padding: 0.07rem;
+  height: 30px;
+  width: 75%;
+  border: none;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  background: var(--gray-background-color);
+}
+
+header .header_top .header_profile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 3fr;
+  justify-self: end;
+  justify-items: end;
+  align-items: center;
+  gap: 1rem;
+}
+
+header .header_top .header_profile h3 {
+  font-size: 1rem;
+}
+
+/* End of header */
+
+aside {
+  grid-area: aside;
+  background-color: var(--white-background-color);
+}
+
+main {
+  grid-area: main;
+  background-color: var(--gray-background-color);
+}
+/* End of grid-based positioning layout. */
+
+/* Styling SVG images - side nav list */
+svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Profile picture - right side */
+img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+/* ASIDE */
