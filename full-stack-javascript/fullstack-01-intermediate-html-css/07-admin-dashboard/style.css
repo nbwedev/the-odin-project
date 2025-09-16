@@ -1,19 +1,18 @@
-/* CSS RESET */
-/* This effectively clears all pre-existing styles and gives you a clean slate browser. */
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* 1. Use a more-intuitive box-sizing model */
+/* CSS RESET */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* 2. Remove default margin */
 * {
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-/* 3. Enable keyword animations */
 @media (prefers-reduced-motion: no-preference) {
   html {
     interpolate-size: allow-keywords;
@@ -21,13 +20,11 @@
 }
 
 body {
-  /* 4. Add accessible line-height */
   line-height: 1.5;
-  /* 5. Improve text rendering */
+
   -webkit-font-smoothing: antialiased;
 }
 
-/* 6. Improve media defaults */
 img,
 picture,
 video,
@@ -37,7 +34,6 @@ svg {
   max-width: 100%;
 }
 
-/* 7. Inherit fonts for form controls */
 input,
 button,
 textarea,
@@ -45,7 +41,6 @@ select {
   font: inherit;
 }
 
-/* 8. Avoid text overflows */
 p,
 h1,
 h2,
@@ -56,7 +51,6 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
 }
@@ -69,16 +63,12 @@ h6 {
   text-wrap: balance;
 }
 
-/*
-  10. Create a root stacking context
-*/
 #root,
 #__next {
   isolation: isolate;
 }
 
 :root {
-  /* Colors */
   --gray-background-color: #e2e8f0;
   --white-background-color: #ffffff;
 }
@@ -263,7 +253,7 @@ aside > ul > li {
 }
 
 aside > ul > li:hover {
-  background-color: var(red);
+  background-color: var(--gray-background-color);
 }
 
 /* End of Aside */
