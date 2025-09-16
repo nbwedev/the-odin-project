@@ -199,13 +199,74 @@ header .header_top {
   align-items: center;
 }
 
-/* End of header */
-
-aside {
-  grid-area: aside;
-  background-color: var(--white-background-color);
+.header_bottom .header_user-profile {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 0.5rem;
 }
 
+.header_bottom .header_user-profile img {
+  width: 56px;
+  height: 56px;
+}
+
+.header_bottom .header_cta {
+  justify-self: end;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.header_bottom .header_cta > button {
+  padding: 0.4em 1.25em;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: black;
+  color: white;
+}
+
+/* End of header */
+
+/* ASIDE */
+
+aside {
+  padding: 1.5rem 1.25rem 1.25rem;
+  grid-area: aside;
+  border-radius: 0 20px 20px 0;
+  display: grid;
+  grid-template-rows: 48px 240px 240px;
+  gap: 3rem;
+  border-right: 1px solid lightgray;
+  cursor: pointer;
+}
+
+aside > h1 {
+  padding: 0.5rem 0.75rem;
+}
+
+aside > ul {
+  display: grid;
+  grid-template-rows: 48px;
+  grid-auto-rows: 48px;
+}
+
+aside > ul > li {
+  padding: 0.5rem 0.75rem;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 1rem;
+  align-self: center;
+  border-radius: 16px;
+  transition: background 0.3s ease;
+}
+
+aside > ul > li:hover {
+  background-color: var(red);
+}
+
+/* End of Aside */
 main {
   grid-area: main;
   background-color: var(--gray-background-color);
