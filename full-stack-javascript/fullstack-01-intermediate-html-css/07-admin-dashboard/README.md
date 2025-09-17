@@ -6,7 +6,7 @@ A simple **Admin Dashboard** built with **HTML** and **CSS**, deployed on **Verc
 
 ## Deployment
 
-- The live site can be viewed here.
+- The live site can be viewed [here](https://admin-dashboard-nbwedev.vercel.app/).
 - Version-controlled with **GitHub** using sparse checkout for the `07-admin-dashboard` project
 
 ---
