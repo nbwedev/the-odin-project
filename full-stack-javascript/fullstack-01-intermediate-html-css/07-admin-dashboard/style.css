@@ -257,11 +257,110 @@ aside > ul > li:hover {
 }
 
 /* End of Aside */
+
+/*  MAIN */
 main {
   grid-area: main;
   background-color: var(--gray-background-color);
+
+  padding: 1rem;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "tasks announcements"
+    "tasks trending";
+  gap: 1rem;
 }
-/* End of grid-based positioning layout. */
+
+main .main_task,
+.main_announcement,
+.main_trending {
+  display: grid;
+  grid-template-rows: 28px 1fr;
+  gap: 0.5rem;
+}
+
+.main_task {
+  grid-area: tasks;
+}
+
+main .main_task h3,
+.main_announcement h3,
+.main_trending h3 {
+  margin-bottom: 0.5rem;
+}
+
+.main_task-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.task {
+  padding: 1rem;
+  background: white;
+  border-radius: 16px;
+  display: grid;
+  grid-template-rows: 24px minmax(3fr, 200px) 1fr;
+}
+
+.task-icon {
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 24px);
+  justify-content: end;
+  align-content: end;
+  gap: 1rem;
+}
+
+.main_announcement-card {
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  background: white;
+  border-radius: 16px;
+}
+
+.main_announcement-card .announcement:nth-of-type(1),
+.main_announcement .announcement:nth-of-type(2) {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid lightgray;
+}
+
+main .main_announcement {
+  grid-area: announcements;
+}
+
+main .main_trending {
+  grid-area: trending;
+}
+
+.main_trending-card {
+  padding: 1rem;
+  background: white;
+  border-radius: 16px;
+}
+
+.main_user-profile {
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 1rem;
+}
+
+.main_user-profile > img {
+  width: 42px;
+  height: 42px;
+}
+
+.main_user-profile > .user-profile-details > .user-profile-tag {
+  font-weight: 600;
+}
+
+/* End of MAIN. */
 
 /* Styling SVG images - side nav list */
 svg {
