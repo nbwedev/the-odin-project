@@ -18,9 +18,7 @@ Semantic HTML – Used main and section elements for meaningful document structu
 
 Two-Panel Layout –  
  Left Panel: Branding and credits.  
- Right Panel: Sign-up form with header, form fields, and call-to-action.
-
-BEM Naming Convention – Consistent and maintainable class names (signup_left-panel, signup_form-area, etc.).
+ Right Panel: Sign-up form with header, form fields, and call-to-action.      
 
 Form Styling – Labels, inputs, and error states styled for clarity and accessibility.
 
@@ -47,6 +45,5 @@ Form Styling – Labels, inputs, and error states styled for clarity and accessi
 
 ## 📖 Learnings
 
-Importance of semantic markup for maintainable layouts.  
-How BEM makes complex UIs easier to scale.  
+Importance of semantic markup for maintainable layouts.         
 Debugging layout issues often comes down to HTML structure, not just CSS.
