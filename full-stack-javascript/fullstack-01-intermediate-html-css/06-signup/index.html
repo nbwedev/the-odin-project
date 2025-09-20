@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/odin-fav.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sign Up!</title>
+  </head>
+  <body>
+    <main class="signup">
+      <!-- Display section -->
+      <section class="signup_left-panel">
+        <div class="signup_logo">
+          <img
+            src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png"
+            alt="odin logo"
+          />
+          <h1>ODIN</h1>
+        </div>
+        <footer class="signup_credits">
+          Source code:
+          <a
+            href="https://github.com/nbwedev/the-odin-project/tree/main/full-stack-javascript/fullstack-01-intermediate-html-css/06-signup"
+            target="_blank"
+            rel="noopener noreferrer"
+            >neilbe.dev</a
+          >
+        </footer>
+      </section>
+
+      <!-- Form section -->
+      <section class="signup_right-panel">
+        <!-- This contains the text on top of the right panel section. -->
+        <section class="signup_header">
+          <p>
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams. Sign up
+            <em>now</em> to get started.
+          </p>
+          <p>You <em>know</em> you want to.</p>
+        </section>
+
+        <!-- This contains the sign-up form. -->
+        <section class="signup_form-area">
+          <h3>Let's do this!</h3>
+          <form id="signup-form">
+            <div class="name-container">
+              <div class="first-name-container">
+                <label for="first-name">FIRST NAME</label>
+                <input
+                  type="first-name"
+                  name="first-name"
+                  id="first-name"
+                  placeholder="Odin"
+                />
+              </div>
+
+              <div class="last-name-container">
+                <label for="last-name">LAST NAME</label>
+                <input
+                  type="last-name"
+                  name="last-name"
+                  id="last-name"
+                  placeholder="Odinson"
+                />
+              </div>
+            </div>
+
+            <div class="contacts-container">
+              <div class="email-container">
+                <label for="email">EMAIL</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="odinodinson@gmail.com"
+                />
+              </div>
+              <div class="phone-number-container">
+                <label for="phone number">PHONE NUMBER</label>
+                <input type="tel" name="phone-number" id="phone-number"
+                placeholder="01234-5678" pattern=""[0-9]{5}-[0-9]{4}"">
+              </div>
+            </div>
+
+            <div class="password-container">
+              <div class="password-container">
+                <label for="password">PASSWORD (*)</label>
+                <input type="password" name="password" id="password" required />
+              </div>
+              <div class="confirm-password-container">
+                <label for="confirm-password">CONFIRM PASSWORD (*)</label>
+                <input
+                  type="password"
+                  name="confirm-password"
+                  id="confirm-password"
+                  required
+                />
+              </div>
+            </div>
+          </form>
+        </section>
+        <!-- This contains the create account and login option. -->
+        <section class="signup_form-cta">
+          <input type="submit" form="signup-form" value="Create Account" />
+          <p>Already have an account? <a href="">Log in</a></p>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
