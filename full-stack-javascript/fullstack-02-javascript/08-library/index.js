@@ -1,7 +1,8 @@
 const myLibrary = [];
 
-// Book constructor
+// Creates book with shared methods and properties
 function Book(title, author, page, read) {
+  this.id = crypto.randomUUID(); // Generate a unique id for each book
   this.title = title;
   this.author = author;
   this.page = page;
@@ -19,8 +20,5 @@ function addBookToLibrary(title, author, page, read) {
   myLibrary.push(book);
 }
 
-// // test
-// addBookToLibrary("12", 12, 123, false);
-// addBookToLibrary("12", 12, 123, true);
-
-// console.log(myLibrary);
+addBookToLibrary("ABC", "12", 123, false);
+console.log(myLibrary[0].info());
