@@ -20,5 +20,17 @@ function addBookToLibrary(title, author, page, read) {
   myLibrary.push(book);
 }
 
-addBookToLibrary("ABC", "12", 123, false);
-console.log(myLibrary[0].info());
+addBookToLibrary("Republic", "Aristotle", 342, true);
+addBookToLibrary("Meditations", "Marcus Aurelius", 424, true);
+addBookToLibrary("Thus Spoke Zarathustra", "Friedrich Nietzsche", 234, false);
+console.log(myLibrary);
+// console.log(myLibrary[0].info()); // Access the book info by calling in on myLibrary array
+
+// Loops each book on the array and displays it
+function listOfBooks() {
+  for (const book of myLibrary) {
+    console.log(book);
+  }
+}
+
+listOfBooks();
