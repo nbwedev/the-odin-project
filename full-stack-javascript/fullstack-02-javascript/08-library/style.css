@@ -75,6 +75,7 @@ h6 {
   --main-background-color: #f4f5fa;
   --fallback: #d5dbfb;
   --button-color: #28388f;
+  --book-color: #d5dbfb;
 
   /* Font */
   --font-color: #f4f5fa;
@@ -140,6 +141,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .add_btn {
@@ -148,4 +150,21 @@ main {
   margin: 20px;
   padding: 1rem 1rem;
   border-radius: 10px;
+}
+/* End of Main */
+
+/* Book Area */
+.library_book {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.book {
+  background: var(--book-color);
+  padding: 1rem;
+  border-radius: 16px;
+  display: grid;
+  grid-template-rows: 24px minmax(3fr, 200px) 1fr;
 }
