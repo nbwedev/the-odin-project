@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 /* CSS Preset : https://www.joshwcomeau.com/css/custom-css-reset/ */
 *,
 *::before,
@@ -7,6 +9,7 @@
 
 * {
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -67,14 +70,20 @@ h6 {
 /* General */
 
 :root {
+  /* Color */
   --header-background-color: #171c36;
   --main-background-color: #f4f5fa;
   --fallback: #d5dbfb;
   --button-color: #28388f;
+
+  /* Font */
+  --font-color: #f4f5fa;
+  --header-text-color: #ffffff;
 }
 
 body {
   background-color: var(--main-background-color, var(--fallback));
+  height: 100vh;
 }
 /* HEADER */
 
@@ -82,10 +91,61 @@ header {
   background-color: var(--header-background-color, var(--fallback));
 }
 
+.library_name {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.library_header {
+  color: var(--header-text-color);
+  display: flex;
+  /* Vushes name left, buttons to right */
+  justify-content: space-between;
+  /* Vertically centers item */
+  align-items: center;
+  /* Spacing for elements */
+  padding: 1rem 2rem;
+}
+.library_nav ul {
+  /* Puts buttons side by side */
+  display: flex;
+  /* Gap between buttons */
+  gap: 1rem;
+}
+
+.library_nav a {
+  background-color: var(--button-color);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.library_header a {
+  color: var(--header-text-color);
+}
+
+ul {
+  /* Removes dot beside links */
+  list-style: none;
+}
+
+a {
+  /* Removes underline in links */
+  text-decoration: none;
+}
+
 /* End of Header */
 
 /* MAIN */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-main .add_btn {
+.add_btn {
   background-color: var(--button-color, var(--fallback));
+  color: var(--header-text-color);
+  margin: 20px;
+  padding: 1rem 1rem;
+  border-radius: 10px;
 }
