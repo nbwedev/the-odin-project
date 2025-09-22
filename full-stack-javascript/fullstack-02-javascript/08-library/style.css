@@ -67,18 +67,19 @@ h6 {
 /* General */
 
 :root {
-  --header-background-color: #1f55ad;
-  --main-background-color: #5278e0;
-  --button-color: #a8c4f0;
+  --header-background-color: #171c36;
+  --main-background-color: #f4f5fa;
+  --fallback: #d5dbfb;
+  --button-color: #28388f;
 }
 
 body {
-  background-color: var(--main-background-color);
+  background-color: var(--main-background-color, var(--fallback));
 }
 /* HEADER */
 
 header {
-  background-color: var(--header-background-color);
+  background-color: var(--header-background-color, var(--fallback));
 }
 
 /* End of Header */
@@ -86,5 +87,5 @@ header {
 /* MAIN */
 
 main .add_btn {
-  background-color: var(--button-color);
+  background-color: var(--button-color, var(--fallback));
 }
