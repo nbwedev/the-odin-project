@@ -86,21 +86,55 @@ body {
   background-color: var(--main-background-color, var(--fallback));
   height: 100vh;
 }
+
+ul {
+  /* Removes dot beside links */
+  list-style: none;
+}
+
+a {
+  color: var(--header-text-color);
+}
+
+li > a {
+  /* Removes underline in links */
+  text-decoration: none;
+
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+li > a:hover {
+  background: var(--button-color);
+  color: var(--font-color);
+}
+
+button {
+  background: var(--header-background-color);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+}
+
 /* HEADER */
 
 header {
   background-color: var(--header-background-color, var(--fallback));
 }
 
-.library_name {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
 .library_header {
   color: var(--header-text-color);
   display: flex;
-  /* Vushes name left, buttons to right */
+  /* Pushes name left, buttons to right */
   justify-content: space-between;
   /* Vertically centers item */
   align-items: center;
@@ -115,23 +149,9 @@ header {
 }
 
 .library_nav a {
-  background-color: var(--button-color);
+  /* background-color: var(--button-color); */
   padding: 0.5rem 1rem;
   border-radius: 10px;
-}
-
-.library_header a {
-  color: var(--header-text-color);
-}
-
-ul {
-  /* Removes dot beside links */
-  list-style: none;
-}
-
-a {
-  /* Removes underline in links */
-  text-decoration: none;
 }
 
 /* End of Header */
@@ -150,7 +170,9 @@ main {
   margin: 20px;
   padding: 1rem 1rem;
   border-radius: 10px;
+  cursor: pointer;
 }
+
 /* End of Main */
 
 /* Book Area */
