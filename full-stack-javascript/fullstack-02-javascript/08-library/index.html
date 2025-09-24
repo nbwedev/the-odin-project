@@ -8,6 +8,7 @@
     <script src="index.js"></script>
     <title>Library</title>
   </head>
+
   <body>
     <!-- TOP -->
     <header class="library_header">
@@ -29,18 +30,71 @@
       </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-      <button class="add_btn">New Book</button>
-      <section class="library_book">
-        <div class="book">
-          <button class="book_toggle"></button>
-          <button class="book_remove"></button>
-          <p class="book_title">Thus Spoke Zarathustra</p>
-          <p class="book_pages">A 352 pages book by</p>
-          <p class="book_author">Friedrich Nietzsche</p>
+    <!-- Dialog -->
+    <dialog>
+      <div class="dialog_top">
+        <h3>Add a Book</h3>
+        <button class="dialog_close" autofocus>x</button>
+      </div>
+      <form>
+        <div>
+          <div class="book_title">
+            <label for="title">Title</label>
+            <input
+              required
+              class="title"
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Thus Spoke Zarathustra"
+            />
+          </div>
+          <!-- authpr -->
+          <div class="book_author">
+            <label for="author">Author</label>
+            <input
+              required
+              class="author"
+              type="text"
+              id="author"
+              name="author"
+              placeholder="Friedrich Nietzche"
+            />
+          </div>
+          <!--  authjor-->
+
+          <!-- apges -->
+          <div class="book_pages">
+            <label for="author">Number of Pages</label>
+            <input
+              required
+              class="pages"
+              type="text"
+              id="pages"
+              name="pages"
+              placeholder="352"
+            />
+          </div>
+          <!-- pages -->
+
+          <!-- is read  -->
+          <div class="book_is-read">
+            <label for="author">Have you read this book?</label>
+            <input
+              required
+              class="is-read"
+              type="text"
+              id="is-read"
+              name="is-read"
+              placeholder="352"
+              value="is-read"
+            />
+          </div>
+          <!-- is read  -->
         </div>
-      </section>
-    </main>
+        <button type="submit">Submit</button>
+      </form>
+    </dialog>
+    <!-- End of Dialog -->
   </body>
 </html>
