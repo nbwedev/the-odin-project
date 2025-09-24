@@ -10,7 +10,6 @@
   </head>
 
   <body>
-    <!-- TOP -->
     <header class="library_header">
       <h1 class="library_name">Library</h1>
       <nav class="library_nav">
@@ -30,7 +29,6 @@
       </nav>
     </header>
 
-    <!-- Dialog -->
     <dialog>
       <div class="dialog_top">
         <h3>Add a Book</h3>
@@ -49,7 +47,7 @@
               placeholder="Thus Spoke Zarathustra"
             />
           </div>
-          <!-- authpr -->
+
           <div class="book_author">
             <label for="author">Author</label>
             <input
@@ -61,9 +59,7 @@
               placeholder="Friedrich Nietzche"
             />
           </div>
-          <!--  authjor-->
 
-          <!-- apges -->
           <div class="book_pages">
             <label for="author">Number of Pages</label>
             <input
@@ -75,9 +71,7 @@
               placeholder="352"
             />
           </div>
-          <!-- pages -->
 
-          <!-- is read  -->
           <div class="book_is-read">
             <label for="author">Have you read this book?</label>
             <input
@@ -90,11 +84,20 @@
               value="is-read"
             />
           </div>
-          <!-- is read  -->
         </div>
         <button type="submit">Submit</button>
       </form>
     </dialog>
-    <!-- End of Dialog -->
+
+    <main class="book_display-area">
+      <button class="add_book">New Book</button>
+      <div class="book">
+        <button class="book_toggle-read"></button>
+        <button class="book_remove-btn"></button>
+        <p class="title">Thus Spoke Zarathustra</p>
+        <p class="pages">A 352 page book by</p>
+        <p class="author">Friedrich Nietzche</p>
+      </div>
+    </main>
   </body>
 </html>
