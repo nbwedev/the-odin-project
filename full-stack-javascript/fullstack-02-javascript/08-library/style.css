@@ -85,6 +85,8 @@ h6 {
 body {
   background-color: var(--main-background-color, var(--fallback));
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
@@ -114,9 +116,9 @@ button {
   transition: opacity 0.3s ease;
 }
 
-button:hover {
+/* button:hover {
   opacity: 0.85;
-}
+} */
 
 h1 {
   margin: 0;
@@ -164,7 +166,7 @@ main {
   flex-direction: column;
 }
 
-.add_btn {
+button {
   background-color: var(--button-color, var(--fallback));
   color: var(--header-text-color);
   margin: 20px;
@@ -176,6 +178,34 @@ main {
 /* End of Main */
 
 /* Book Area */
+
+dialog [:open] {
+  padding: 1.5rem;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  width: 240px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+form input {
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid lightgray;
+}
+
 .library_book {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
