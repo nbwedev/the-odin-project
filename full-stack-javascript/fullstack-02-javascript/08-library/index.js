@@ -33,4 +33,18 @@ function listOfBooks() {
   }
 }
 
-listOfBooks();
+// listOfBooks();
+
+// EVENT LISTENERS
+
+const addBook = document.querySelector(".add_book");
+const closeBook = document.querySelector("dialog .dialog_close");
+const modal = document.querySelector("dialog");
+
+addBook.addEventListener("click", () => {
+  modal.showModal();
+});
+
+closeBook.addEventListener("click", () => {
+  modal.close();
+});
