@@ -1,30 +1,34 @@
 const myLibrary = [];
 
+const booksContainer = document.querySelector(".books"); // container for book cards
+const newBookButton = document.querySelector(".add_book"); // opens pop-up new book form
+const modal = document.querySelector("dialog"); // the pop-up
+const closeModalButton = document.querySelector("dialog .dialog_close"); // close button inside pop up form
+const form = document.querySelector("form"); // form input that contains book details
+
+// Book actions inside main
+const toggleReadButtons = document.querySelectorAll(".book_toggle-read");
+const removeBookButtons = document.querySelectorAll(".book_remove-btn");
+
 // Creates book with shared methods and properties
-function Book(title, author, page, read) {
+function Book(title, author, pages, read) {
   this.id = crypto.randomUUID(); // Generate a unique id for each book
   this.title = title;
   this.author = author;
-  this.page = page;
+  this.page = pages;
   this.read = read;
 
   this.info = function () {
     const readStatus = this.read ? "read" : "not read yet";
-    return `${this.title} by ${this.author}, ${page} pages, ${readStatus}`;
+    return `${this.title} by ${this.author}, ${pages} pages, ${readStatus}`;
   };
 }
 
 // Take params, create a book then store it in the array
-function addBookToLibrary(title, author, page, read) {
-  const book = new Book(title, author, page, read);
+function addBookToLibrary(title, author, pages, read) {
+  const book = new Book(title, author, pages, read);
   myLibrary.push(book);
 }
-
-addBookToLibrary("Republic", "Aristotle", 342, true);
-addBookToLibrary("Meditations", "Marcus Aurelius", 424, true);
-addBookToLibrary("Thus Spoke Zarathustra", "Friedrich Nietzsche", 234, false);
-console.log(myLibrary);
-// console.log(myLibrary[0].info()); // Access the book info by calling in on myLibrary array
 
 // Loops each book on the array and displays it
 function listOfBooks() {
@@ -33,18 +37,14 @@ function listOfBooks() {
   }
 }
 
-// listOfBooks();
+listOfBooks();
 
 // EVENT LISTENERS
 
-const addBook = document.querySelector(".add_book");
-const closeBook = document.querySelector("dialog .dialog_close");
-const modal = document.querySelector("dialog");
-
-addBook.addEventListener("click", () => {
+newBookButton.addEventListener("click", () => {
   modal.showModal();
 });
 
-closeBook.addEventListener("click", () => {
+closeModalButton.addEventListener("click", () => {
   modal.close();
 });
