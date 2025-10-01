@@ -11,23 +11,25 @@ const toggleReadButtons = document.querySelectorAll(".book_toggle-read");
 const removeBookButtons = document.querySelectorAll(".book_remove-btn");
 
 // Creates book with shared methods and properties
-function Book(title, author, pages, read) {
-  this.id = crypto.randomUUID(); // Generate a unique id for each book
+function Book(title, author, pages, isRead, id) {
+  this.id = id; // Generate a unique id for each book
   this.title = title;
   this.author = author;
   this.page = pages;
-  this.read = read;
 
-  this.info = function () {
-    const readStatus = this.read ? "read" : "not read yet";
-    return `${this.title} by ${this.author}, ${pages} pages, ${readStatus}`;
-  };
+  if (isRead) {
+    this.isRead = "Read";
+  } else {
+    this.isRead = "Not Read";
+  }
 }
 
 // Take params, create a book then store it in the array
-function addBookToLibrary(title, author, pages, read) {
-  const book = new Book(title, author, pages, read);
+function addBookToLibrary(title, author, pages, isRead) {
+  const id = self.crypto.randomUUID();
+  const book = new Book(title, author, pages, isRead, id);
   myLibrary.push(book);
+  return book;
 }
 
 // Loops each book on the array and displays it
@@ -47,4 +49,24 @@ newBookButton.addEventListener("click", () => {
 
 closeModalButton.addEventListener("click", () => {
   modal.close();
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const titleValue = document.querySelector(".title").value;
+  const authorValue = document.querySelector(".author").value;
+  const pagesValue = document.querySelector(".pages").value;
+  let isRead = false;
+
+  if (document.querySelector(".is-read").checked) {
+    isReadValue = true;
+  } else {
+    isReadValue = false;
+  }
+
+  modal.close();
+
+  addBookToLibrary(titleValue, authorValue, pagesValue, isReadValue);
+  displayBooks();
 });
