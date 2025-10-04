@@ -134,3 +134,38 @@ form.addEventListener("submit", (event) => {
   addBookToLibrary(titleValue, authorValue, pagesValue, isReadValue);
   displayBooks();
 });
+
+// Pre-populated books
+
+//  TO DO: fix book name overflow in container
+const prepopulatedBooks = [
+  [
+    "The Will to Power",
+    "Beyond Good and Evil",
+    "Critique of Pure Reason",
+    "Either/Or",
+    "Discourse on Method",
+    "The Republic",
+  ],
+  [
+    "Friedrich Nietzche",
+    "Friedrich Nietzche",
+    "Immanuel Kant",
+    "Søren Kierkegaard",
+    "René Descartes",
+    "Plato",
+  ],
+  [600, 352, 856, 640, 128, 416],
+  [true, false, false, true, true, false],
+];
+
+for (let i = 0; i < prepopulatedBooks[0].length; i++) {
+  const title = prepopulatedBooks[0][i];
+  const author = prepopulatedBooks[1][i];
+  const pages = prepopulatedBooks[2][i];
+  const isRead = prepopulatedBooks[3][i];
+
+  addBookToLibrary(title, author, pages, isRead);
+}
+
+displayBooks();
