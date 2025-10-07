@@ -33,6 +33,16 @@ Book.prototype.toggleReadStatus = function () {
   }
 };
 
+// Take params, create a book and then store it on the array
+function addBookToLibrary(title, author, pages, isRead) {
+  const id = self.crypto.randomUUID(); // Generates unique ID for each book created
+  const book = new Book(title, author, pages, isRead, id);
+  myLibrary.push(book);
+  return book;
+}
+
+addBookToLibrary("Dune", "Frank Herbert", 412, true);
+
 // Event Listeners
 
 // Controls users interactions with book form popup
