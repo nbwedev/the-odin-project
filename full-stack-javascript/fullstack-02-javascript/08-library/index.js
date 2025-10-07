@@ -33,7 +33,7 @@ Book.prototype.toggleReadStatus = function () {
   }
 };
 
-// Take params, create a book and then store it on the array
+// Take params, creates a book, generates a unique ID for each book and then store it on the array
 function addBookToLibrary(title, author, pages, isRead) {
   const id = self.crypto.randomUUID(); // Generates unique ID for each book created
   const book = new Book(title, author, pages, isRead, id);
@@ -41,7 +41,7 @@ function addBookToLibrary(title, author, pages, isRead) {
   return book;
 }
 
-addBookToLibrary("Dune", "Frank Herbert", 412, true);
+// addBookToLibrary("Dune", "Frank Herbert", 412, true); test if addBookToLibrary works > change return to log
 
 // Event Listeners
 
@@ -56,4 +56,16 @@ closeBookForm.addEventListener("click", () => {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // stops page reload
+
+  // Collects the data from form inputs(ex. title, author, pages) then stores it into variables for later use
+  const titleValue = document.querySelector(".title").value;
+  const authorValue = document.querySelector(".author").value;
+  const pagesValue = document.querySelector(".pages").value;
+  // Checks if is-read check box is ticket - short version of if-else block
+  let isReadValue = document.querySelector(".is-read").checked;
+
+  modal.close(); // Closes the popup form after hitting submit
+
+  // Runs the function after modal closes
+  addBookToLibrary(titleValue, authorValue, pagesValue, isReadValue);
 });
