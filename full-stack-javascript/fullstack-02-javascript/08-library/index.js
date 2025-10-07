@@ -15,7 +15,23 @@ function Book(title, author, pages, isRead, id) {
   this.author = author;
   this.pages = pages;
   this.id = id;
+
+  // This if-else block handles the boolean value provided by the form input. The value is coming the form event listener.
+  if (isRead) {
+    this.isRead = "Read";
+  } else {
+    this.isRead = "Not read";
+  }
 }
+
+// Checks current book's current isRead status
+Book.prototype.toggleReadStatus = function () {
+  if (this.isRead === "Read") {
+    this.isRead = "Not read";
+  } else {
+    this.isRead = "Read";
+  }
+};
 
 // Event Listeners
 
