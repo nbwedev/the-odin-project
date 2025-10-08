@@ -237,14 +237,6 @@ dialog[open] {
   animation: myFadeIn 0.8s ease normal;
 }
 
-@keyframes myFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 /* End of Dialog */
 
 /* MAIN */
