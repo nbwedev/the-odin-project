@@ -76,6 +76,13 @@ function displayBooks() {
     removeBookButton.textContent = "x";
     bookElement.setAttribute("id", book.id);
 
+    // Book toggle - read status logic
+    if (book.isRead === "Read") {
+      toggleReadButton.style.backgroundColor = toggle_blue;
+    } else {
+      toggleReadButton.style.backgroundColor = toggle_red;
+    }
+
     // Add book element to book container
     bookElement.appendChild(toggleReadButton);
     bookElement.appendChild(removeBookButton);
