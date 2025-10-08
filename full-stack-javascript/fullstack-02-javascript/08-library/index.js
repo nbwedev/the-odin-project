@@ -43,6 +43,49 @@ function addBookToLibrary(title, author, pages, isRead) {
 
 // addBookToLibrary("Dune", "Frank Herbert", 412, true); test if addBookToLibrary works > change return to log
 
+function displayBooks() {
+  bookContainer.innerHTML = "";
+  const toggle_red = "#a5031c";
+  const toggle_blue = "#000e52";
+
+  // How each book card looks like
+  for (const book of myLibrary) {
+    const bookElement = document.createElement("div");
+    const title = document.createElement("p");
+    const author = document.createElement("p");
+    const pages = document.createElement("p");
+    const isRead = document.createElement("p");
+    const removeBookButton = document.createElement("button");
+    const toggleReadButton = document.createElement("button");
+
+    // Applies the CSS style
+    bookElement.classList.add("book");
+    title.classList.add("title");
+    author.classList.add("author");
+    pages.classList.add("pages");
+    isRead.classList.add("is-read");
+    removeBookButton.classList.add("book_remove-btn");
+    toggleReadButton.classList.add("book_toggle-read");
+    removeBookButton.classList.add(book.id);
+
+    // sets the text inside the element
+    title.textContent = book.title;
+    author.textContent = book.author;
+    pages.textContent = "A" + book.pages + "page book by";
+    isRead.textContent = book.isRead;
+    removeBookButton.textContent = "x";
+    bookElement.setAttribute("id", book.id);
+
+    // Add book element to book container
+    bookElement.appendChild(toggleReadButton);
+    bookElement.appendChild(removeBookButton);
+    bookElement.appendChild(title);
+    bookElement.appendChild(pages);
+    bookElement.appendChild(author);
+    bookContainer.appendChild(bookElement);
+  }
+}
+
 // Event Listeners
 
 // Controls users interactions with book form popup
@@ -68,4 +111,5 @@ form.addEventListener("submit", (event) => {
 
   // Runs the function after modal closes
   addBookToLibrary(titleValue, authorValue, pagesValue, isReadValue);
+  displayBooks(myLibrary);
 });
