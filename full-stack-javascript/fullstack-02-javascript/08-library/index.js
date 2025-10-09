@@ -71,7 +71,7 @@ function displayBooks() {
     // sets the text inside the element
     title.textContent = book.title;
     author.textContent = book.author;
-    pages.textContent = "A" + book.pages + "page book by";
+    pages.textContent = "A " + book.pages + " page book by ";
     isRead.textContent = book.isRead;
     removeBookButton.textContent = "x";
     bookElement.setAttribute("id", book.id);
