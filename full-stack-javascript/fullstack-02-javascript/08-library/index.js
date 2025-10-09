@@ -46,7 +46,7 @@ function addBookToLibrary(title, author, pages, isRead) {
 function displayBooks() {
   bookContainer.innerHTML = "";
   const toggle_red = "#a5031c";
-  const toggle_blue = "#000e52";
+  const toggle_blue = "#28388f";
 
   // How each book card looks like
   for (const book of myLibrary) {
@@ -91,8 +91,32 @@ function displayBooks() {
     bookElement.appendChild(author);
     bookContainer.appendChild(bookElement);
   }
-}
 
+  const removeBook = document.querySelectorAll(".book_remove-btn");
+  const toggleReadButton = document.querySelectorAll(".book_toggle-read");
+
+  for (let i = 0; i < removeBook.length; i++) {
+    removeBook[i].addEventListener("click", (event) => {
+      const parentID = event.target.parentNode.id;
+      const bookToBeRemoved = document.getElementById(`${parentID}`);
+      bookToBeRemoved.remove();
+      books = books.filter((book) => book.id !== parentID);
+      displayBooks();
+    });
+  }
+
+  for (let i = 0; i < toggleReadButton.length; i++) {
+    toggleReadButton[i].addEventListener("click", () => {
+      if (myLibrary[i].isRead === "Read") {
+        toggleReadButton[i].style.backgroundColor = toggle_blue;
+        myLibrary[i].toggleReadStatus();
+      } else {
+        toggleReadButton[i].style.backgroundColor = toggle_red;
+        myLibrary[i].toggleReadStatus();
+      }
+    });
+  }
+}
 // Event Listeners
 
 // Controls users interactions with book form popup
@@ -120,3 +144,36 @@ form.addEventListener("submit", (event) => {
   addBookToLibrary(titleValue, authorValue, pagesValue, isReadValue);
   displayBooks(myLibrary);
 });
+
+// DISPLAY
+const prepopulatedBooks = [
+  [
+    "Beyond Good and Evil",
+    "Critique of Pure Reason",
+    "The Republic",
+    "Discourse on Method",
+    "The Myth of Sisyphus",
+    "Either/Or",
+  ],
+  [
+    "Friedrich Nietzsche",
+    "Immanuel Kant",
+    "Plato",
+    "René Descartes",
+    "Albert Camus",
+    "Søren Kierkegaard",
+  ],
+  [240, 856, 416, 86, 212, 640],
+  [true, false, false, true, true, false],
+];
+
+for (let i = 0; i < prepopulatedBooks[0].length; i++) {
+  const title = prepopulatedBooks[0][i];
+  const author = prepopulatedBooks[1][i];
+  const pages = prepopulatedBooks[2][i];
+  const isRead = prepopulatedBooks[3][i];
+
+  addBookToLibrary(title, author, pages, isRead);
+}
+
+displayBooks();
